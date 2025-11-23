@@ -1,0 +1,257 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NIKHLESH ROHILLA Portfolio</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================
+       Root Color Variables
+       ========================== */
+    :root {
+      --bg: #ffffff;           /* Main website background color */
+      --text: #111111;         /* Base text color */
+      --card: #f2f6ff;         /* Light blue card background */
+      --accent: #090f1f;       /* Royal blue Primary color */
+      --accent-2: #3b82f6;     /* Soft blue secondary color */
+      --muted: #5b5b5b;        /* Light text */
+      --radius: 1rem;
+    }
+
+    /* ==========================
+       Global Styling
+       ========================== */
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      font-family: Inter, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 1.5rem;
+    }
+
+    a { text-decoration: none; color: inherit; }
+
+    /* ==========================
+       Header (Flexbox Layout)
+       ========================== */
+    header {
+      background-color: #3b82f6;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:4rem;
+    }
+
+    nav {
+      display:flex;
+      gap:1rem;
+    }
+
+    nav a {
+      padding: .5rem .9rem;
+      font-weight:600;
+      border-radius:.5rem;
+      transition: 0.25s ease;
+    }
+
+    /* Hover effect for nav links */
+    nav a:hover {
+      background: var(--accent);
+      color:white;
+      transform: translateY(-3px);
+    }
+
+    /* ==========================
+       Hero Section (Flexbox)
+       ========================== */
+    .hero {
+      display:flex;
+      flex-direction:column;
+      gap:1.5rem;
+      margin-bottom:3rem;
+    }
+
+    .profile {
+      width:150px;
+      height:150px;
+      border-radius:50%;
+      object-fit:cover;
+      border:4px solid var(--accent);
+      margin-top:1rem;
+    }
+
+    .headline {
+      font-size:2rem;
+      font-weight:700;
+    }
+
+    /* Keyframe animation for highlight title */
+    @keyframes textColor {
+      0% { color: var(--accent); }
+      50% { color: var(--accent-2); }
+      100% { color: var(--accent); }
+    }
+
+    .highlight {
+      animation:textColor 3s infinite linear;
+    }
+
+    .btn {
+      padding: .6rem 1.2rem;
+      border-radius:.6rem;
+      border:none;
+      cursor:pointer;
+      font-weight:600;
+      margin-right:.5rem;
+      transition: 0.3s ease;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color:white;
+    }
+
+    .btn:hover {
+      transform:translateY(-4px);
+      box-shadow:0px 8px 18px rgba(0,0,0,0.20);
+    }
+
+    /* ==========================
+       Skills & Projects (CSS GRID)
+       ========================== */
+    .grid {
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px,1fr));
+      gap:1rem;
+      margin:1rem 0;
+    }
+
+    .card {
+      background:var(--card);
+      padding:1rem;
+      border-radius:.8rem;
+      transition:.3s ease;
+    }
+
+    /* Hover effect on cards */
+    .card:hover {
+      transform:translateY(-6px);
+      box-shadow:0 12px 25px rgba(0,0,0,0.14);
+    }
+
+    /* Contact form */
+    form {
+      display:flex;
+      flex-direction:column;
+      gap:.8rem;
+      margin-top:1.5rem;
+    }
+
+    input,textarea {
+      padding:.7rem;
+      border:1px solid #ddd;
+      border-radius:.5rem;
+      width:100%;
+    }
+
+    textarea { height:120px; }
+
+    /* Footer */
+    footer {
+      margin-top:2rem;
+      text-align:center;
+      color:var(--muted);
+    }
+
+    /* ==========================
+       Responsive Media Queries
+       ========================== */
+    @media (min-width:720px) {
+      .hero { flex-direction:row; align-items:center; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ==========================
+       Header Section
+       ========================== -->
+  <header>
+    <h2 style="color:var(--accent)">NIKHLESH Portfolio</h2>
+    <nav>
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ==========================
+       HERO SECTION
+       ========================== -->
+  <section id="hero" class="hero">
+    <div>
+      <h1 class="headline">Hi, I'm <span class="highlight">Nikhlesh Rohilla</span></h1>
+      <h3 style="color:var(--muted)">Full Stack Developer & Web Designer</h3>
+
+      <div style="margin-top:1rem;">
+        <button class="btn btn-primary">View Projects</button>
+        <button class="btn">Contact Me</button>
+      </div>
+    </div>
+
+   <img src="profile1.jpg" alt="Profile Picture" width="150" height="150">
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <h2 style="color:var(--accent)">About Me</h2>
+    <p>I am an enthusiastic web development learner, passionate about building creative, responsive, and user-friendly websites. Here, you’ll find a showcase of my projects, skills, and journey as I grow in the field of web development</p>
+  </section>
+<br>
+  
+  <section id=" My skills">
+    <h2 style="color:var(--accent)">Skills</h2>
+    <div class="grid">
+      <div class="card">HTML</div>
+      <div class="card">CSS (Flexbox / Grid)</div>
+      <div class="card">JavaScript</div>
+    </div>
+  </section>
+
+ 
+  <section id=" My projects">
+    <h2 style="color:var(--accent)">Projects</h2>
+    <div class="grid">
+      <div class="card">Portfolio Website</div>
+      <div class="card">TinkerCAD Key Holder</div>
+     
+    </div>
+  </section>
+
+  <!-- CONTACT FORM -->
+  <section id="contact">
+    <h2 style="color:var(--accent)">Contact</h2>
+    <form>
+      <input type="text" placeholder="Your name" required>
+      <input type="email" placeholder="Your email" required>
+      <textarea placeholder="Your message"></textarea>
+      <button class="btn btn-primary" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © NikhleshRohilla 2025 — Portfolio Project
+  </footer>
+
+</body>
+</html>
